@@ -1,6 +1,6 @@
 ﻿namespace Servicios.Colecciones
 {
-    class IDZ
+    class andres
     {
     }
 }

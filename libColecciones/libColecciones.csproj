@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="DobleEnlazadas falta la lista\clsColaDobleEnlazada.cs" />
     <Compile Include="DobleEnlazadas falta la lista\clsListaDobleEnlazada.cs" />
-    <Compile Include="IDZ.cs" />
+    <Compile Include="andres.cs" />
     <Compile Include="Interfaces CORRECT\iCola.cs" />
     <Compile Include="Nodos CORRECT\clsNodo.cs" />
     <Compile Include="Nodos CORRECT\clsNodoDobleEnlazado.cs" />

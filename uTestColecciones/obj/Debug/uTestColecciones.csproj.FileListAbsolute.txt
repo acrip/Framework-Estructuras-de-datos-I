@@ -1,0 +1,7 @@
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\bin\Debug\uTestColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\bin\Debug\uTestColecciones.pdb
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.csprojResolveAssemblyReference.cache
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.pdb

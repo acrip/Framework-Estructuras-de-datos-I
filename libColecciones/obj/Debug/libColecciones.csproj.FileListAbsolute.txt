@@ -1,0 +1,5 @@
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\libColecciones\bin\Debug\libColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\libColecciones\bin\Debug\libColecciones.pdb
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\libColecciones\obj\Debug\libColecciones.csprojResolveAssemblyReference.cache
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\libColecciones\obj\Debug\libColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\libColecciones\obj\Debug\libColecciones.pdb

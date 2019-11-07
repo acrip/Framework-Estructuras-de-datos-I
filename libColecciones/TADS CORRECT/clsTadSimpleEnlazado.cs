@@ -38,6 +38,7 @@ namespace Servicios.Colecciones.TADS
             {
                 varNodoNuevo.ponerSiguiente(atrNodoPrimero);
                 atrNodoPrimero = varNodoNuevo;
+                atrLongitud++;
                 return true;
             }
             #endregion
@@ -45,6 +46,7 @@ namespace Servicios.Colecciones.TADS
             else if (prmIndice == atrLongitud)
             {
                 atrNodoUltimo.ponerSiguiente(varNodoNuevo);
+                atrNodoUltimo = varNodoNuevo;
                 atrLongitud++;
                 return true;
             }
@@ -53,7 +55,7 @@ namespace Servicios.Colecciones.TADS
             else
             {
                 clsNodoSimpleEnlazado<Tipo> varNodoActual = atrNodoPrimero;
-                for (int varIndice = 1; varIndice < prmIndice; varIndice++)
+                for (int varIndice = 1; varIndice < prmIndice - 1; varIndice++)
                     varNodoActual = varNodoActual.darSiguiente();
                 varNodoNuevo.ponerSiguiente(varNodoActual.darSiguiente());
                 varNodoActual.ponerSiguiente(varNodoNuevo);

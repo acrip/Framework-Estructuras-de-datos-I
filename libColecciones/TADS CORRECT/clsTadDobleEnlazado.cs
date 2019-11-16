@@ -17,7 +17,7 @@ namespace Servicios.Colecciones.TADS
             if (EstaVacia())
             {
                 atrNodoPrimero = varNodoNuevo;
-                atrNodoUltimo = varNodoNuevo;
+                atrNodoUltimo = atrNodoPrimero;
                 atrNodoUltimo.ponerAnterior(atrNodoPrimero);
                 atrNodoPrimero.ponerSiguiente(atrNodoUltimo);
                 atrLongitud++;
@@ -90,7 +90,7 @@ namespace Servicios.Colecciones.TADS
                     return true;
                 }
                 #endregion
-
+                #region extraer en n posicion
                 if (EsValido(prmIndice))
                 {
                     clsNodoDobleEnlazado<Tipo> varNodoExtraido = atrNodoPrimero;
@@ -105,13 +105,75 @@ namespace Servicios.Colecciones.TADS
                     GC.Collect();
                     return true;
                 }
-
+                #endregion
             }
-
             return false;
         }
-        protected override bool ModificarEn(int prmIndice, Tipo prmItem){return false;}
-        protected override bool RecuperarEn(int prmIndice, ref Tipo prmItem){return false;}
+        protected override bool ModificarEn(int prmIndice, Tipo prmItem){
+            if (!EstaVacia())
+            {
+                #region modificar en 0
+                if (prmIndice == 0)
+                {
+                    atrNodoPrimero.ponerItem(prmItem);
+                    if(atrLongitud == 1)
+                    {
+                        atrNodoUltimo = atrNodoPrimero;
+                    }
+                    return true;
+                }
+                #endregion
+                #region modificar en longitud
+                if (prmIndice == atrLongitud - 1)
+                {
+                    atrNodoUltimo.ponerItem(prmItem);
+                    return true;
+                }
+                #endregion
+                #region modificar en n posicion
+                if (EsValido(prmIndice))
+                {
+                    clsNodoDobleEnlazado<Tipo> varNodoModificado = atrNodoPrimero;
+                    for (int varIndice = 1; varIndice < prmIndice; varIndice++)
+                        varNodoModificado = varNodoModificado.darSiguiente();
+                    varNodoModificado.ponerItem(prmItem);
+                    return true;
+                }
+                #endregion
+            }
+            return false;
+            }
+        protected override bool RecuperarEn(int prmIndice, ref Tipo prmItem)
+        {
+            if (!EstaVacia())
+                {
+                #region recuperar en 0
+                if (prmIndice == 0)
+                {
+                    prmItem = atrNodoPrimero.darItem();
+                    return true;
+                }
+                #endregion
+                #region recuperar en longitud
+                if (prmIndice == atrLongitud - 1)
+                {
+                    prmItem = atrNodoUltimo.darItem();
+                    return true;
+                }
+                #endregion
+                #region recuperar en n posicion
+                if (EsValido(prmIndice))
+                {
+                    clsNodoDobleEnlazado<Tipo> varNodoRecuperado = atrNodoPrimero;
+                    for (int varIndice = 1; varIndice < prmIndice; varIndice++)
+                        varNodoRecuperado = varNodoRecuperado.darSiguiente();
+                    prmItem = varNodoRecuperado.darItem();
+                    return true;
+                }
+                #endregion
+                }
+            return false;
+        }
         #endregion
     }
 }

@@ -13,6 +13,10 @@ namespace Servicios.Colecciones.TADS
         {
             return prmIndice >= 0 && prmIndice < atrLongitud;
         }
+        protected bool EstaVacia()
+        {
+            return atrLongitud == 0;
+        }
         #endregion
         #region CRUDS-Query
         protected virtual bool InsertarEn(int prmIndice, Tipo prmItem) { return false; }

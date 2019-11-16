@@ -14,27 +14,19 @@ namespace Servicios.Colecciones.TADS
         #region CRUDs
         protected override bool InsertarEn(int prmIndice, Tipo prmItem)
         {
-            #region Metodo para validar cuando no se puede realizar una insersion
-            if ((!EsValido(prmIndice) && prmIndice != atrLongitud))
-            {
-                return false;
-            }
-            #endregion
-            #region Conjunto de Metodos que garantizan la creacion e insercion del item en la coleccion
-            #region Creacion del nodo con su respectivo item para insertar en la coleccion
             clsNodoSimpleEnlazado<Tipo> varNodoNuevo = new clsNodoSimpleEnlazado<Tipo>(prmItem);
-            #endregion
-            #region Metodo para agregar el primer elemento a la coleccion
-            if (atrLongitud == 0)
+            #region Insertar el primer elemento
+            if (EstaVacia())
             {
                 atrNodoPrimero = varNodoNuevo;
                 atrNodoUltimo = varNodoNuevo;
+                atrNodoPrimero.ponerSiguiente(atrNodoUltimo);
                 atrLongitud++;
                 return true;
             }
             #endregion
-            #region Metodo para insertar en la primera posicion de la coleccion
-            else if (prmIndice == 0)
+            #region Insertar al inicio de la coleccion
+            if (prmIndice == 0)
             {
                 varNodoNuevo.ponerSiguiente(atrNodoPrimero);
                 atrNodoPrimero = varNodoNuevo;
@@ -42,8 +34,8 @@ namespace Servicios.Colecciones.TADS
                 return true;
             }
             #endregion
-            #region Metodo para insertar en la ultima posicion de la coleecion
-            else if (prmIndice == atrLongitud)
+            #region Insertar al final de la coleccion
+            if (prmIndice == atrLongitud)
             {
                 atrNodoUltimo.ponerSiguiente(varNodoNuevo);
                 atrNodoUltimo = varNodoNuevo;
@@ -51,8 +43,8 @@ namespace Servicios.Colecciones.TADS
                 return true;
             }
             #endregion
-            #region Metodo para insertar un elemento en cualquier indice de la coleccion
-            else
+            #region Insertar en cualquier posicion
+            if (EsValido(prmIndice))
             {
                 clsNodoSimpleEnlazado<Tipo> varNodoActual = atrNodoPrimero;
                 for (int varIndice = 1; varIndice < prmIndice - 1; varIndice++)
@@ -63,10 +55,30 @@ namespace Servicios.Colecciones.TADS
                 return true;
             }
             #endregion
-            #endregion
+            return false;
         }
         protected override bool ExtraerEn(int prmIndice, ref Tipo prmItem)
         {
+            if (!EstaVacia())
+            {
+                //clsNodoSimpleEnlazado<Tipo> varNodoExtraido;
+                if (prmIndice == 0)
+                {
+                    prmItem = atrNodoPrimero.darItem();
+                    atrNodoPrimero = atrNodoPrimero.darSiguiente();
+                    atrLongitud--;
+                }
+                if (prmIndice == atrLongitud-1)
+                {
+
+                }
+                if (EsValido(prmIndice))
+                {
+
+                }
+                return false;
+            }
+            #region Metodos a reconfigurar
             if (RecuperarEn(prmIndice, ref prmItem))
             {
             clsNodoSimpleEnlazado<Tipo> varNodoAEliminar;
@@ -78,6 +90,7 @@ namespace Servicios.Colecciones.TADS
             return true;
             }
             return false;
+            #endregion
         }
         protected override bool ModificarEn(int prmIndice, Tipo prmItem)
         {

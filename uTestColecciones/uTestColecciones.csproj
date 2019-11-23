@@ -52,10 +52,36 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest Vectoriales\UnitTestPilaVector.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="MIS PRUEBAS\uTestColaVector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="uTestTADS\UnitTest1.cs" />
+    <Compile Include="uTestAgoritmosDeOrdenamiento\uTestOrdenamiento.cs" />
+    <Compile Include="uTestConstructoresDobleEnlazada\uTestListaDobleEnlazadaConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresDobleEnlazada\uTestColaDobleEnlazadaConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresDobleEnlazada\uTestPilaDobleEnlazadaConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresSimpleEnlazada\uTestPilaSimpleEnlazadaConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresSimpleEnlazada\uTestListaSimpleEnlazadaConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresSimpleEnlazada\uTestColaSimpleEnlazadaConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresVectorial\uTestPilaVectorConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresVectorial\uTestListaVectorConstructoresV1.cs" />
+    <Compile Include="uTestConstructoresVectorial\uTestColaVectorConstructoresV1.cs" />
+    <Compile Include="uTestDobleEnlazada\uTestColaDobleEnlazadaCRUDV1.cs" />
+    <Compile Include="uTestDobleEnlazada\uTestListaDobleEnlazadaCRUDV1.cs" />
+    <Compile Include="uTestDobleEnlazada\uTestPilaDobleEnlazadaCRUDV1.cs" />
+    <Compile Include="MIS PRUEBAS\uTestColaDobleEnlazadaOBSOLETA.cs" />
+    <Compile Include="MIS PRUEBAS\uTestTadSimpleEnlazado.cs" />
+    <Compile Include="uTestSimpleEnlazada\uTestListaSimpleEnlazadaCRUDV1.cs" />
+    <Compile Include="uTestSimpleEnlazada\uTestColaSimpleEnlazadaCRUDV1.cs" />
+    <Compile Include="uTestSimpleEnlazada\uTestPilaSimpleEnlazadaCRUDV1.cs" />
+    <Compile Include="uTestVectorial\clsPersona.cs" />
+    <Compile Include="uTestVectorial\uTestPilaVectorCRUDV1.cs" />
+    <Compile Include="uTestVectorial\uTestListaVectorCRUDV1.cs" />
+    <Compile Include="uTestVectorial\uTestColaVectorCRUDV1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libColecciones\libColecciones.csproj">
+      <Project>{10AF6742-D865-4FA8-AF91-28BB6B10EABA}</Project>
+      <Name>libColecciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Choose>

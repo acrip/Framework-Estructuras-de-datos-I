@@ -5,3 +5,10 @@ C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestCol
 C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.csprojResolveAssemblyReference.cache
 C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.dll
 C:\Users\andre\Documents\Estructuras de Datos l\Laboratorio\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.pdb
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.csprojResolveAssemblyReference.cache
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\obj\Debug\uTestColecciones.pdb
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\bin\Debug\uTestColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\bin\Debug\uTestColecciones.pdb
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\bin\Debug\libColecciones.dll
+C:\Users\andre\Documents\Estructuras de Datos l\Proyecto del Semestre\Colecciones\uTestColecciones\bin\Debug\libColecciones.pdb

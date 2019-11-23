@@ -43,27 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DobleEnlazadas falta la lista\clsColaDobleEnlazada.cs" />
-    <Compile Include="DobleEnlazadas falta la lista\clsListaDobleEnlazada.cs" />
+    <Compile Include="DobleEnlazadas\clsColaDobleEnlazada.cs" />
+    <Compile Include="DobleEnlazadas\clsListaDobleEnlazada.cs" />
     <Compile Include="andres.cs" />
-    <Compile Include="Interfaces CORRECT\iCola.cs" />
-    <Compile Include="Nodos CORRECT\clsNodo.cs" />
-    <Compile Include="Nodos CORRECT\clsNodoDobleEnlazado.cs" />
-    <Compile Include="Nodos CORRECT\clsNodoSImpleEnlazado.cs" />
-    <Compile Include="SimpleEnlazadas falta la lista\clsColaSimpleEnlazada.cs" />
-    <Compile Include="SimpleEnlazadas falta la lista\clsListaSimpleEnlazada.cs" />
-    <Compile Include="TADS CORRECT\clsTAD.cs" />
-    <Compile Include="TADS CORRECT\clsTadDobleEnlazado.cs" />
-    <Compile Include="TADS CORRECT\clsTadSimpleEnlazado.cs" />
-    <Compile Include="TADS CORRECT\clsTadVectorial.cs" />
-    <Compile Include="DobleEnlazadas falta la lista\clsPilaDobleEnlazada.cs" />
-    <Compile Include="Interfaces CORRECT\iLista.cs" />
-    <Compile Include="Interfaces CORRECT\iPila.cs" />
+    <Compile Include="Interfaces\iCola.cs" />
+    <Compile Include="Nodos\clsNodo.cs" />
+    <Compile Include="Nodos\clsNodoDobleEnlazado.cs" />
+    <Compile Include="Nodos\clsNodoSImpleEnlazado.cs" />
+    <Compile Include="SimpleEnlazadas\clsColaSimpleEnlazada.cs" />
+    <Compile Include="SimpleEnlazadas\clsListaSimpleEnlazada.cs" />
+    <Compile Include="TADS\clsTAD.cs" />
+    <Compile Include="TADS\clsTadDobleEnlazado.cs" />
+    <Compile Include="TADS\clsTadSimpleEnlazado.cs" />
+    <Compile Include="TADS\clsTadVectorial.cs" />
+    <Compile Include="DobleEnlazadas\clsPilaDobleEnlazada.cs" />
+    <Compile Include="Interfaces\iLista.cs" />
+    <Compile Include="Interfaces\iPila.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleEnlazadas falta la lista\clsPilaSimpleEnlazada.cs" />
-    <Compile Include="Vectoriales falta confirmar\clsColaVector.cs" />
-    <Compile Include="Vectoriales falta confirmar\clsListaVector.cs" />
-    <Compile Include="Vectoriales falta confirmar\clsPilaVector.cs" />
+    <Compile Include="SimpleEnlazadas\clsPilaSimpleEnlazada.cs" />
+    <Compile Include="Vectoriales\clsColaVector.cs" />
+    <Compile Include="Vectoriales\clsListaVector.cs" />
+    <Compile Include="Vectoriales\clsPilaVector.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

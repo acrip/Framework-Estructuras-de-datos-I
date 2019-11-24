@@ -6,10 +6,14 @@ namespace Servicios.Colecciones.Nodos
         #region Atributos
         private Tipo atrItem;
         #endregion
-        #region Metodos Contructores
+        #region Métodos
+        #region Método Contructor
         public clsNodo(Tipo prmItem){atrItem = prmItem;}
         #endregion
+        #region Métodos accesores y mutadores
         public Tipo darItem(){return atrItem;}             
         public void ponerItem(Tipo prmItem){atrItem = prmItem; }
+        #endregion
+        #endregion
     }
 }

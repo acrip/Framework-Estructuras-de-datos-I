@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Servicios.Colecciones.Interfaces
 {
     interface iPila <Tipo> where Tipo : IComparable

@@ -1,6 +1,5 @@
 ﻿using System;
 using Servicios.Colecciones.Nodos;
-
 namespace Servicios.Colecciones.TADS
 {
     public class clsTadDobleEnlazado<Tipo> : clsTAD<Tipo> where Tipo : IComparable
@@ -19,7 +18,7 @@ namespace Servicios.Colecciones.TADS
             return this.atrNodoUltimo;
         }
         #endregion
-        #region CRUDsc
+        #region CRUD-Query
         protected override bool InsertarEn(int prmIndice, Tipo prmItem)
         {
             clsNodoDobleEnlazado<Tipo> varNodoNuevo = new clsNodoDobleEnlazado<Tipo>(prmItem);

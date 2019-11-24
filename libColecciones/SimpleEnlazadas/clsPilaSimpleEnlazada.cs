@@ -1,7 +1,6 @@
 ﻿using System;
 using Servicios.Colecciones.Interfaces;
 using Servicios.Colecciones.TADS;
-
 namespace Servicios.Colecciones.SimpleEnlazadas
 {
     public class clsPilaSimpleEnlazada<Tipo> : clsTadSimpleEnlazado<Tipo>, iPila<Tipo> where Tipo : IComparable

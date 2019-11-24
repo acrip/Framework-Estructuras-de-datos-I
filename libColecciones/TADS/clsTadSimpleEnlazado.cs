@@ -1,7 +1,5 @@
 ﻿using System;
 using Servicios.Colecciones.Nodos;
-using System.Collections.Generic;
-
 namespace Servicios.Colecciones.TADS
 {
     public class clsTadSimpleEnlazado <Tipo> : clsTAD<Tipo> where Tipo : IComparable
@@ -71,6 +69,7 @@ namespace Servicios.Colecciones.TADS
         {
             if (!EstaVacia())
             {
+                #region Entraer al inicio de la colección
                 if (prmIndice == 0)
                 {
                     prmItem = atrNodoPrimero.darItem();
@@ -78,7 +77,9 @@ namespace Servicios.Colecciones.TADS
                     atrLongitud--;
                     return true;
                 }
-                if(prmIndice == atrLongitud - 1)
+                #endregion
+                #region Extraer al final de la coleccion
+                if (prmIndice == atrLongitud - 1)
                 {
                     clsNodoSimpleEnlazado<Tipo> varNodoExtraido = atrNodoPrimero;
                     for (int varIndice = 1; varIndice < prmIndice; varIndice++)
@@ -89,6 +90,8 @@ namespace Servicios.Colecciones.TADS
                     atrLongitud--;
                     return true;
                 }
+                #endregion
+                #region Extraer en cualquier posicion
                 if (EsValido(prmIndice))
                 {
                     clsNodoSimpleEnlazado<Tipo> varNodoExtraido = atrNodoPrimero;
@@ -99,31 +102,19 @@ namespace Servicios.Colecciones.TADS
                     atrLongitud--;
                     return true;
                 }
-                return false;
-            }
-            #region Metodos a reconfigurar
-            if (RecuperarEn(prmIndice, ref prmItem))
-            {
-            clsNodoSimpleEnlazado<Tipo> varNodoAEliminar;
-            clsNodoSimpleEnlazado<Tipo> varNodoActual = atrNodoPrimero;
-            for (int varIndice = 0; varIndice < prmIndice-1; varIndice++)
-                varNodoActual = varNodoActual.darSiguiente();
-            varNodoAEliminar = varNodoActual.darSiguiente();
-            varNodoActual.ponerSiguiente(varNodoAEliminar.darSiguiente());
-            return true;
+                #endregion
             }
             return false;
-            #endregion
         }
         protected override bool ModificarEn(int prmIndice, Tipo prmItem)
         {
             if (EsValido(prmIndice))
             {
-            clsNodoSimpleEnlazado<Tipo> varNodoActual = atrNodoPrimero;
-            for (int varIndice = 0; varIndice < prmIndice; varIndice++)
-                varNodoActual = varNodoActual.darSiguiente();
-            varNodoActual.ponerItem(prmItem);
-            return true;
+                clsNodoSimpleEnlazado<Tipo> varNodoActual = atrNodoPrimero;
+                for (int varIndice = 0; varIndice < prmIndice; varIndice++)
+                    varNodoActual = varNodoActual.darSiguiente();
+                varNodoActual.ponerItem(prmItem);
+                return true;
             }
             return false;
         }

@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Servicios.Colecciones.TADS
 {
     public class clsTAD<Tipo> where Tipo : IComparable
@@ -8,11 +7,7 @@ namespace Servicios.Colecciones.TADS
         protected int atrLongitud = 0;
         #endregion
         #region Metodos
-        #region Auxiliar 
-        protected bool EsValido(int prmIndice)
-        {
-            return prmIndice >= 0 && prmIndice < atrLongitud;
-        }
+        #region Mñetodos Auxiliares
         public bool EstaVacia()
         {
             return atrLongitud == 0;
@@ -20,6 +15,10 @@ namespace Servicios.Colecciones.TADS
         public int darLongitud()
         {
             return this.atrLongitud;
+        }
+        protected bool EsValido(int prmIndice)
+        {
+            return prmIndice >= 0 && prmIndice < atrLongitud;
         }
         #endregion
         #region CRUDS-Query

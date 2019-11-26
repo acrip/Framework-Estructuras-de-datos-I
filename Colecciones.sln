@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libColecciones", "libColecc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uTestColecciones", "uTestColecciones\uTestColecciones.csproj", "{6211EC80-90FF-4652-9B13-6820D0DAE9BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libOrdenamiento", "libOrdenamiento\libOrdenamiento.csproj", "{A46F04A2-2CC4-42D4-88B2-5329D3F22A75}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{6211EC80-90FF-4652-9B13-6820D0DAE9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6211EC80-90FF-4652-9B13-6820D0DAE9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6211EC80-90FF-4652-9B13-6820D0DAE9BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A46F04A2-2CC4-42D4-88B2-5329D3F22A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A46F04A2-2CC4-42D4-88B2-5329D3F22A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A46F04A2-2CC4-42D4-88B2-5329D3F22A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A46F04A2-2CC4-42D4-88B2-5329D3F22A75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

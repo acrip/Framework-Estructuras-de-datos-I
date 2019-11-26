@@ -1,12 +1,8 @@
 ﻿using System;
-namespace Servicios.Colecciones.TADS
+namespace libOrdenamiento
 {
-    public class clsTAD<Tipo> where Tipo : IComparable
+    public partial class clsOrdenamiento
     {
-        #region Atributos
-        #region Atributos del TAD
-        protected int atrLongitud = 0;
-        #endregion
         #region Atributos para el ordenamiento: TAD
         private bool atrEstaOrdenadaAscendente;
         private bool atrEstaOrdenadaDescendente;
@@ -14,58 +10,6 @@ namespace Servicios.Colecciones.TADS
         private long atrNumeroIntercambios;
         private long atrNumeroInserciones;
         private long atrNumeroLlamadosRecursivos;
-        #endregion
-        #endregion
-        #region Metodos
-        #region Metodos TAD (Lo que se habia hecho con chaustre en las clases)
-        #region Métodos Auxiliares
-        public bool EstaVacia()
-        {
-            return atrLongitud == 0;
-        }
-        public int darLongitud()
-        {
-            return this.atrLongitud;
-        }
-        protected bool EsValido(int prmIndice)
-        {
-            return prmIndice >= 0 && prmIndice < atrLongitud;
-        }
-        #endregion
-        #region CRUDS-Query
-        protected virtual bool InsertarEn(int prmIndice, Tipo prmItem) { return false; }
-        protected virtual bool ModificarEn(int prmIndice, Tipo prmItem) { return false; }
-        protected virtual bool ExtraerEn(int prmIndice, ref Tipo prmItem) { return false; }
-        protected virtual bool RecuperarEn(int prmIndice, ref Tipo prmItem) { return false; }
-        public bool Encontrar(Tipo prmItem, ref int prmIndice) { return false; }
-        public bool Existe(Tipo prmItem) { return false; }
-        #endregion
-        #endregion
-        #region Metodos para ordenamiento (Segun la guia compartida por chuastre)
-        #region Metodos auxiliares ordenamiento
-
-        /// <summary>
-        /// 
-        /// Este grupo de métodos no hace parte de la guia
-        /// compartida por chaustre,
-        /// pero son métodos utilizados por la unidad de pruebas
-        /// y que por lo tanto de una u otra forma deben existir
-        /// 
-        /// Lógicamente falta implementacion
-        /// 
-        /// </summary>
-        public string darMensajeUltimoMetodo()
-        {
-            return "";
-        }
-        public bool ponerModoInteligente(bool prmParametro)
-        {
-            return false;
-        }
-        public bool darCronometro()
-        {
-            return false;
-        }
         #endregion
         #region Métodos accesores para el ordenamiento: TAD
         public bool darEstaOrdenadaAscendente()
@@ -180,8 +124,7 @@ namespace Servicios.Colecciones.TADS
         }
         protected virtual void MetodoBurbujaBiDireccional(bool prmOrdenarPorDescendente)
         {
-            //Mensajero (falso, “Ordenar colección por el método de burbuja bi-direccional”, "El método aún no se ha implementado.");
-        }
+            //Mensajero (falso, “Ordenar colección por el método de burbuja bi-direccional”, "El método aún no se ha implementado.");        }
         protected virtual void MetodoInsercion(bool prmOrdenarPorDescendente)
         {
             //Mensajero (falso, “Ordenar colección por el método de inserción”, "El método aún no se ha implementado.");
@@ -190,7 +133,7 @@ namespace Servicios.Colecciones.TADS
         {
             //Mensajero (falso, “Ordenar colección por el método de selección”, "El método aún no se ha implementado.");
         }
-        protected virtual void MetodoQuickSort(bool prmOrdenarPorDescendente, int prmIndiceInicial, int prmIndiceFinal)
+        protected virtual void MetodoQuickSort(bool prmOrdenarPorDescendente, int prmIndiceInicial, int prmIndiceInicial)
         {
             //Mensajero(falso, “Ordenar colección por el método de quick sort”, "El método aún no se ha implementado.");
 
@@ -224,7 +167,7 @@ namespace Servicios.Colecciones.TADS
                                 MetodoSeleccion(prmOrdenarPorDescendente);
                                 break;
                             case "QuickSort":
-                                MetodoQuickSort(prmOrdenarPorDescendente, 0, atrLongitud - 1);
+                                MetodoQuickSort(prmOrdenarPorDescendente, 0, atrLongitud-1);
                                 break;
                             default:
                                 //Mensajero (falso, varMetodoEnEjecucion, "\r" + "-El método de ordenamiento indicado aún no está implementado.");
@@ -269,7 +212,7 @@ namespace Servicios.Colecciones.TADS
         public bool OrdenarBurbujaMejorado(bool prmOrdenarPorDescendente)
         {
             return Ordenar("Burbuja Mejorado", prmOrdenarPorDescendente);        }
-        public bool OrdenarBurbujaBiDireccional(bool prmOrdenarPorDescendente)
+        public bool OrdenarBurbujaBIDIreccional(bool prmOrdenarPorDescendente)
         {
             return Ordenar("Burbuja BiDireccional", prmOrdenarPorDescendente);        }
         public bool OrdenarInsercion(bool prmOrdenarPorDescendente)
@@ -282,7 +225,6 @@ namespace Servicios.Colecciones.TADS
         {
             return Ordenar("QuickSort", prmOrdenarPorDescendente);        }
         #endregion
-        #endregion
-        #endregion
     }
 }
+

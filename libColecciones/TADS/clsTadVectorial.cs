@@ -182,6 +182,158 @@ namespace Servicios.Colecciones.TADS
             return false;
         }
         #endregion
+
+        #region Métodos ordenamiento
+        protected override void MetodoBurbujaSimple(bool prmOrdenarPorDescendente)
+        {
+            int varPosExterior, varPosInterior;
+            Tipo varElementoTemporal;
+            for (varPosExterior = 1; varPosExterior < atrVectorDeItems.Length - 1; varPosExterior++)
+            {
+                for (varPosInterior = 0; varPosInterior < atrVectorDeItems.Length - varPosExterior - 1; varPosInterior++)
+                {
+                    if (atrVectorDeItems[varPosInterior].CompareTo(atrVectorDeItems[varPosInterior + 1]) > 0)
+                    {
+                        varElementoTemporal = atrVectorDeItems[varPosInterior];
+                        atrVectorDeItems[varPosInterior] = atrVectorDeItems[varPosInterior + 1];
+                        atrVectorDeItems[varPosInterior + 1] = varElementoTemporal;
+                    }
+                }
+            }
+        }
+        protected override void MetodoBurbujaMejorado(bool prmOrdenarPorDescendente)
+        {
+            int varPosExterior = 1, varPosInterior;
+            Tipo varElementoTemporal;
+            bool varHuboIntercambio = true;
+            while ((varPosExterior < atrVectorDeItems.Length) && (varHuboIntercambio))
+            {
+                varPosExterior = varPosExterior + 1;
+                varHuboIntercambio = false;
+                for (varPosInterior = 0; varPosInterior < atrVectorDeItems.Length - varPosExterior; varPosInterior++)
+                {
+                    if (atrVectorDeItems[varPosInterior].CompareTo(atrVectorDeItems[varPosInterior + 1]) > 0)
+                    {
+                        varElementoTemporal = atrVectorDeItems[varPosInterior];
+                        atrVectorDeItems[varPosInterior] = atrVectorDeItems[varPosInterior + 1];
+                        atrVectorDeItems[varPosInterior + 1] = varElementoTemporal;
+                        varHuboIntercambio = true;
+                    }
+                }
+            }
+        }
+        protected override void MetodoBurbujaBiDireccional(bool prmOrdenarPorDescendente)
+        {
+            bool varHuboIntercambios = false;
+            int varPos;
+            Tipo varElementoTemporal;
+            do
+            {
+                for (varPos = 0; varPos < atrVectorDeItems.Length; varPos++)
+                {
+                    if (atrVectorDeItems[varPos].CompareTo(atrVectorDeItems[varPos + 1]) > 0)
+                    {
+                        varElementoTemporal = atrVectorDeItems[varPos];
+                        atrVectorDeItems[varPos] = atrVectorDeItems[varPos + 1];
+                        atrVectorDeItems[varPos + 1] = varElementoTemporal;
+                        varHuboIntercambios = true;
+                    }
+                }
+                if (varHuboIntercambios == false)
+                {
+                    break;
+                }
+                varHuboIntercambios = false;
+                for (varPos = atrVectorDeItems.Length - 2; varPos < 0; varPos--)//ojo con el <
+                {
+                    if (atrVectorDeItems[varPos].CompareTo(atrVectorDeItems[varPos]) > 0)
+                    {
+                        varElementoTemporal = atrVectorDeItems[varPos];
+                        atrVectorDeItems[varPos] = atrVectorDeItems[varPos + 1];
+                        atrVectorDeItems[varPos + 1] = varElementoTemporal;
+                        varHuboIntercambios = true;
+                    }
+                }
+            } while (varHuboIntercambios == true);
+        }
+        protected override void MetodoInsercion(bool prmOrdenarPorDescendente)
+        {
+            int varPosExterior, varPosInterior;
+            Tipo varElementoInsertado;
+            for (varPosExterior = 1; varPosExterior < atrVectorDeItems.Length; varPosExterior++)
+            {
+                varElementoInsertado = atrVectorDeItems[varPosExterior];
+                varPosInterior = varPosExterior - 1;
+                while ((varPosInterior >= 0) && (atrVectorDeItems[varPosInterior].CompareTo(varElementoInsertado) != 0) && (atrVectorDeItems[varPosInterior].CompareTo(varElementoInsertado) > 0))
+                {
+                    atrVectorDeItems[varPosInterior + 1] = atrVectorDeItems[varPosInterior];
+                    varPosInterior = varPosInterior - 1;
+                }
+                atrVectorDeItems[varPosInterior + 1] = varElementoInsertado;
+            }
+        }
+        protected override void MetodoSeleccion(bool prmOrdenarPorDescendente)
+        {
+            int varPosExterior, varPosInterior, varPosDelMinimo;
+            Tipo varElementoTemporal;
+            for (varPosExterior = 0; varPosExterior < atrVectorDeItems.Length - 1; varPosExterior++)
+            {
+                varPosDelMinimo = varPosExterior;
+                for (varPosInterior = varPosExterior + 1; varPosInterior < atrVectorDeItems.Length - 1; varPosInterior++)
+                {
+                    if (atrVectorDeItems[varPosInterior].CompareTo(atrVectorDeItems[varPosDelMinimo]) < 0)
+                    {
+                        varPosDelMinimo = varPosInterior;
+                    }
+                }
+                if (varPosDelMinimo != varPosExterior)
+                {
+                    varElementoTemporal = atrVectorDeItems[varPosDelMinimo];
+                    atrVectorDeItems[varPosDelMinimo] = atrVectorDeItems[varPosExterior];
+                    atrVectorDeItems[varPosExterior] = varElementoTemporal;
+                }
+            }
+        }
+        protected override void MetodoQuickSort(bool prmOrdenarPorDescendente, int prmIndiceInicial, int prmIndiceFinal)
+        {
+            /*
+            int varPosIzquierdo, varPosDerecho;
+            Tipo varElementoTemporal, varElementoPivote;
+            varElementoPivote = atrVectorDeItems[(prmPosDelPrimero + prmPosDelUltimo) / 2];
+            varPosIzquierdo = prmPosDelPrimero;
+            varPosDerecho = prmPosDelUltimo;
+            while (varPosIzquierdo <= varPosDerecho && (prmPosDelUltimo - prmPosDelPrimero) > 0)
+            {
+                while (atrVectorDeItems[varPosIzquierdo].CompareTo(varElementoPivote) < 0)
+                {
+                    varPosIzquierdo = varPosIzquierdo + 1;
+                }
+                while (atrVectorDeItems[varPosDerecho].CompareTo(varElementoPivote) > 0)
+                {
+                    varPosDerecho = varPosDerecho - 1;
+                }
+                if (varPosIzquierdo <= varPosDerecho)
+                {
+                    varElementoTemporal = atrVectorDeItems[varPosIzquierdo];
+                    atrVectorDeItems[varPosIzquierdo] = atrVectorDeItems[varPosDerecho];
+                    atrVectorDeItems[varPosDerecho] = varElementoTemporal;
+                    varPosIzquierdo++;
+                    varPosDerecho--;
+                }
+            }
+            if (prmPosDelPrimero < varPosDerecho)
+            {
+                MetodoQuickSort(ref atrVectorDeItems, prmPosDelPrimero, varPosDerecho);
+            }
+            if (varPosIzquierdo < prmPosDelUltimo)
+            {
+                MetodoQuickSort(ref atrVectorDeItems, varPosIzquierdo, prmPosDelUltimo);
+
+            }
+            */
+        }
+
+        #endregion
         #endregion
     }
 }

@@ -265,22 +265,28 @@ namespace Servicios.Colecciones.TADS
         #region Métodos fachada para el ordenamiento
         public bool OrdenarBurbujaSimple(bool prmOrdenarPorDescendente)
         {
-            return Ordenar("Burbuja Simple", prmOrdenarPorDescendente);        }
+            return Ordenar("Burbuja Simple", prmOrdenarPorDescendente);
+        }
         public bool OrdenarBurbujaMejorado(bool prmOrdenarPorDescendente)
         {
-            return Ordenar("Burbuja Mejorado", prmOrdenarPorDescendente);        }
+            return Ordenar("Burbuja Mejorado", prmOrdenarPorDescendente);
+        }
         public bool OrdenarBurbujaBiDireccional(bool prmOrdenarPorDescendente)
         {
-            return Ordenar("Burbuja BiDireccional", prmOrdenarPorDescendente);        }
+            return Ordenar("Burbuja BiDireccional", prmOrdenarPorDescendente);
+        }
         public bool OrdenarInsercion(bool prmOrdenarPorDescendente)
         {
-            return Ordenar("Insercion", prmOrdenarPorDescendente);        }
+            return Ordenar("Insercion", prmOrdenarPorDescendente);
+        }
         public bool OrdenarSeleccion(bool prmOrdenarPorDescendente)
         {
-            return Ordenar("Seleccion", prmOrdenarPorDescendente);        }
+            return Ordenar("Seleccion", prmOrdenarPorDescendente);
+        }
         public bool OrdenarQuickSort(bool prmOrdenarPorDescendente)
         {
-            return Ordenar("QuickSort", prmOrdenarPorDescendente);        }
+            return Ordenar("QuickSort", prmOrdenarPorDescendente);
+        }
         #endregion
         #endregion
         #endregion

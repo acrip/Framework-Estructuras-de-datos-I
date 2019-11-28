@@ -10,8 +10,8 @@ namespace Servicios.Colecciones.TADS
         #region Atributos para el ordenamiento: TAD
         private bool atrEstaOrdenadaAscendente;
         private bool atrEstaOrdenadaDescendente;
-        private long atrNumeroComparaciones;
-        private long atrNumeroIntercambios;
+        protected long atrNumeroComparaciones;
+        protected long atrNumeroIntercambios;
         private long atrNumeroInserciones;
         private long atrNumeroLlamadosRecursivos;
         #endregion

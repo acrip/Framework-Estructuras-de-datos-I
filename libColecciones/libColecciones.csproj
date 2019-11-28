@@ -50,7 +50,6 @@
     <Compile Include="Nodos\clsNodo.cs" />
     <Compile Include="Nodos\clsNodoDobleEnlazado.cs" />
     <Compile Include="Nodos\clsNodoSImpleEnlazado.cs" />
-    <Compile Include="Ordenamiento\clsBrokerOrdenamiento.cs" />
     <Compile Include="SimpleEnlazadas\clsColaSimpleEnlazada.cs" />
     <Compile Include="SimpleEnlazadas\clsListaSimpleEnlazada.cs" />
     <Compile Include="TADS\clsTAD.cs" />

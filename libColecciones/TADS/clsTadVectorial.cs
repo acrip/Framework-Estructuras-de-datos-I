@@ -11,6 +11,7 @@ namespace Servicios.Colecciones.TADS
         #endregion
         #region Metodos
         #region Constructores Base TadVectorial
+        //UUPS: Optimizar los constructores para evitar código redundante
         public clsTadVectorial()
         {
             this.atrCapacidad = 100; //int.MaxValue/8;
@@ -182,22 +183,35 @@ namespace Servicios.Colecciones.TADS
             return false;
         }
         #endregion
+        #region Metodo auxiliar que permite ordenar tanto ascendente como descendente
+        private int compare(Tipo objeto1, Tipo objeto2, bool prmOrdenarPorDescendente)
+        {
+            if (prmOrdenarPorDescendente)
+            {
+                return -1 * objeto1.CompareTo(objeto2);
+            }
+            return objeto1.CompareTo(objeto2);
 
+        }
+        #endregion
         #region Métodos ordenamiento
         protected override void MetodoBurbujaSimple(bool prmOrdenarPorDescendente)
         {
             int varPosExterior, varPosInterior;
             Tipo varElementoTemporal;
-            for (varPosExterior = 1; varPosExterior < atrVectorDeItems.Length - 1; varPosExterior++)
+            for (varPosExterior = 0; varPosExterior < atrLongitud - 1; varPosExterior++)
             {
-                for (varPosInterior = 0; varPosInterior < atrVectorDeItems.Length - varPosExterior - 1; varPosInterior++)
+                
+                for (varPosInterior = 0; varPosInterior < atrLongitud - varPosExterior - 1; varPosInterior++)
                 {
                     if (atrVectorDeItems[varPosInterior].CompareTo(atrVectorDeItems[varPosInterior + 1]) > 0)
                     {
                         varElementoTemporal = atrVectorDeItems[varPosInterior];
                         atrVectorDeItems[varPosInterior] = atrVectorDeItems[varPosInterior + 1];
                         atrVectorDeItems[varPosInterior + 1] = varElementoTemporal;
+                        atrNumeroIntercambios++;
                     }
+                    atrNumeroComparaciones++;
                 }
             }
         }
@@ -225,35 +239,42 @@ namespace Servicios.Colecciones.TADS
         protected override void MetodoBurbujaBiDireccional(bool prmOrdenarPorDescendente)
         {
             bool varHuboIntercambios = false;
-            int varPos;
+            int varPosicionIzquierda = 0;
+            int varPosicionDerecha = atrLongitud - 1;
+            int variableDeOrdenamiento = 0; 
             Tipo varElementoTemporal;
             do
             {
-                for (varPos = 0; varPos < atrVectorDeItems.Length; varPos++)
+                for (int varPosicionActual = varPosicionIzquierda; varPosicionActual < varPosicionDerecha; varPosicionActual++)
                 {
-                    if (atrVectorDeItems[varPos].CompareTo(atrVectorDeItems[varPos + 1]) > 0)
+                    variableDeOrdenamiento = compare(atrVectorDeItems[varPosicionActual], atrVectorDeItems[varPosicionActual + 1], prmOrdenarPorDescendente);
+                    if (variableDeOrdenamiento > 0)
                     {
-                        varElementoTemporal = atrVectorDeItems[varPos];
-                        atrVectorDeItems[varPos] = atrVectorDeItems[varPos + 1];
-                        atrVectorDeItems[varPos + 1] = varElementoTemporal;
+                        varElementoTemporal = atrVectorDeItems[varPosicionActual];
+                        atrVectorDeItems[varPosicionActual] = atrVectorDeItems[varPosicionActual + 1];
+                        atrVectorDeItems[varPosicionActual + 1] = varElementoTemporal;
                         varHuboIntercambios = true;
+                        atrNumeroIntercambios++;
                     }
+                    atrNumeroComparaciones++;
                 }
-                if (varHuboIntercambios == false)
-                {
-                    break;
-                }
+                if (varHuboIntercambios == false) break;
                 varHuboIntercambios = false;
-                for (varPos = atrVectorDeItems.Length - 2; varPos < 0; varPos--)//ojo con el <
+                for (int varPosicionActual = varPosicionDerecha; varPosicionActual > varPosicionIzquierda; varPosicionActual--)
                 {
-                    if (atrVectorDeItems[varPos].CompareTo(atrVectorDeItems[varPos]) > 0)
+                    variableDeOrdenamiento = compare(atrVectorDeItems[varPosicionActual], atrVectorDeItems[varPosicionActual - 1], prmOrdenarPorDescendente);
+                    if (variableDeOrdenamiento < 0)
                     {
-                        varElementoTemporal = atrVectorDeItems[varPos];
-                        atrVectorDeItems[varPos] = atrVectorDeItems[varPos + 1];
-                        atrVectorDeItems[varPos + 1] = varElementoTemporal;
+                        varElementoTemporal = atrVectorDeItems[varPosicionActual];
+                        atrVectorDeItems[varPosicionActual] = atrVectorDeItems[varPosicionActual - 1];
+                        atrVectorDeItems[varPosicionActual - 1] = varElementoTemporal;
                         varHuboIntercambios = true;
+                        atrNumeroIntercambios++;
                     }
+                    atrNumeroComparaciones++;
                 }
+                varPosicionIzquierda++;
+                varPosicionDerecha--;
             } while (varHuboIntercambios == true);
         }
         protected override void MetodoInsercion(bool prmOrdenarPorDescendente)
